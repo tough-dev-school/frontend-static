@@ -6,7 +6,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
 
-app.set("trust proxy", "loopback");
+app.set("trust proxy", true);
 app.use(morgan("combined"));
 
 app.use("/healthcheck/", (_, res) => res.send("OK"));
